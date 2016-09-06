@@ -5,8 +5,8 @@
     <title>Title</title>
     <style type="text/css">
         .grid {
-            width: 700px;
-            height: 430px;
+            width: 100%;
+            height: 100%;
         }
 
         .my-custom-menu {
@@ -32,10 +32,18 @@
     <script>
         System.import('lib/bootstrap');
     </script>
-    <strong>Data Length:</strong> {{ gridOptions.data.length | number }}
-    <strong>Last Cell Edited:</strong> {{msg.lastCellEdited}}
-    <div >
-        <div ui-grid="gridOptions"
+    <div layout="column">
+        <div layout="row">
+            <div layout="row" flex="50">
+                4848448
+            </div>
+            <div layout="row" flex="50" layout-align="end start">
+                <div>
+                    <md-icon style="font-size: 30px; margin-bottom: 5px; cursor: -webkit-grab;" md-font-icon="material-icons md-warn" ng-click="removeFirstRow()">delete</md-icon>
+                </div>
+            </div>
+        </div>
+        <div style="margin-left: 5px;margin-right: 5px" ui-grid="gridOptions"
              ui-grid-move-columns
              ui-grid-pinning
              ui-grid-pagination
